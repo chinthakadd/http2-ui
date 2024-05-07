@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+.default {
+  font-family: "JetBrains Mono", Economica, "Times New Roman", monospace;
+  /*background-color: #2b2b2b;*/
+  background-color: #e9e9ed;
+  color: #0097a7;
+}

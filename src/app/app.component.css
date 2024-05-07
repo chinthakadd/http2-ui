@@ -1,0 +1,74 @@
+.nav-custom {
+  background-color: black;
+  color: ghostwhite;
+  border-bottom: ghostwhite dotted !important;
+  margin-bottom: 20px;
+}
+
+.big-row {
+  background: transparent;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.main-card {
+  border: none;
+  background: white;
+  padding-bottom: 10px;
+  /*height: 400px;*/
+}
+
+.card-header {
+  color: white;
+  background: #303f9f;
+  border-left: black !important;
+}
+
+.card-header-http2 {
+  background: #ffa726;
+}
+
+.card-header-http1 {
+  background: #303f9f;
+}
+
+
+.cell-good {
+  background-color: green;
+  text-align: center;
+  color: #e9e9ed;
+  margin: 1px 1px 1px 1px;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 1rem;
+}
+
+.cell-bad {
+  background-color: darkred;
+  text-align: center;
+  color: #e9e9ed;
+  margin: 1px 1px 1px 1px;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 1rem;
+}
+
+.cell-off {
+  background-color: darkgray;
+  text-align: center;
+  color: #e9e9ed;
+  margin: 1px 1px 1px 1px;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 0.5rem;
+}

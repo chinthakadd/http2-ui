@@ -1,21 +1,125 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+
+<nav class="navbar nav-custom">
+  <a class="navbar-brand">MINION 101 : HTTP/2 Connection Multiplexing</a>
+</nav>
+
+<div class="container-fluid no-gutters">
+  <div class="row big-row  no-gutters">
+    <div class="col-lg-1">
+      <div style="background-color: green;width: 65px; height: 60px"></div>
+    </div>
+    <div class="col-lg-11">
+      <p style="align-self: center;justify-content: center;padding-top: 1%;color: black">
+        Represents a SSE Stream
+      </p>
+    </div>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<br/>
+<div class="container-fluid no-gutters">
+  <div id="sec-http1" class="row big-row  no-gutters">
+    <div class="col-lg-12 no-gutters">
+      <!-- #########################################################################################################     -->
+      <div class="card main-card">
+
+        <div class="card-header card-header-http1">
+          <div class="container-fluid no-gutters">
+            <div class="row">
+              <div class="col-lg-2"><h4 style="padding-top: 10px">HTTP 1.1</h4></div>
+              <div class="col-lg-9"></div>
+              <div class="col-lg-1">
+                <button class="btn btn-success" (click)="addHttp1()">ADD</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="http1-req-container">
+          <div class="row">
+
+            <div class="col-lg-9">
+
+              <div class="container-sm" style="padding-left: 5%; padding-top: 5%">
+                <div class="row" id="http1Grid" #h1div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="col-lg-3">
+              <div class="card m-md-5">
+                <div class="card-body">
+                  <h6 class="card-title" style="text-align: center">CONNECTIONS</h6>
+                  <h1 class="card-text" style="text-align: center">{{h1ConnectionCount$ | async}}</h1>
+                </div>
+
+                <div class="card-body">
+                  <h6 class="card-title" style="text-align: center">SSE-STREAMS</h6>
+                  <h1 class="card-text" style="text-align: center">{{h1StreamCount$ | async}}</h1>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <br/>
+      <!-- #########################################################################################################     -->
+      <div class="card main-card">
+
+        <div class="card-header card-header-http2">
+          <div class="container-fluid no-gutters">
+            <div class="row">
+              <div class="col-lg-2"><h4 style="padding-top: 10px">HTTP 2</h4></div>
+              <div class="col-lg-9"></div>
+              <div class="col-lg-1">
+                <button class="btn btn-success" (click)="addHttp2()">ADD</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div id="http2-req-container">
+          <div class="row">
+
+            <div class="col-lg-9">
+
+              <div class="container-sm" style="padding-left: 5%; padding-top: 5%">
+                <div class="row" id="http2Grid" #h2div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="col-lg-3">
+              <div class="card m-md-5">
+                <div class="card-body">
+                  <h6 class="card-title" style="text-align: center">CONNECTIONS</h6>
+                  <h1 class="card-text" style="text-align: center">{{h2ConnectionCount$ | async}}</h1>
+                </div>
+
+                <div class="card-body">
+                  <h6 class="card-title" style="text-align: center">SSE-STREAMS</h6>
+                  <h1 class="card-text" style="text-align: center">{{h2StreamCount$ | async}}</h1>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <br/>
+
+</div>
 
 <router-outlet></router-outlet>
